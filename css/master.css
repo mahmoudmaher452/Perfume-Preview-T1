@@ -1,0 +1,150 @@
+/* font-family: "Fraunces", serif; */
+/* font-family: "Montserrat", sans-serif; */
+/* S Global */
+:root {
+  --main-color: hsl(158, 36%, 37%);
+  --bg-color: hsl(30, 38%, 92%);
+  --heading-color: hsl(212, 21%, 14%);
+  --p-color: hsl(228, 12%, 48%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+/* E Global */
+body {
+  background-color: var(--bg-color);
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  margin: 30px auto;
+  padding: 0 30px;
+}
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: white;
+  max-width: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.card .image img {
+  max-width: 100%;
+  display: inherit;
+}
+.card .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px;
+}
+.card .text h6.category {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--p-color);
+}
+.card .text h1.tittle {
+  font-family: "Fraunces", serif;
+  font-size: 30px;
+  word-spacing: 2px;
+  color: var(--heading-color);
+  line-height: 1em;
+}
+.card .text p.des {
+  line-height: 2;
+  color: var(--p-color);
+}
+.card .text .price {
+  display: flex;
+  align-items: center;
+}
+.card .text .price .cur-price {
+  font-family: "Fraunces", serif;
+  font-size: 30px;
+  color: var(--main-color);
+  margin-right: 1em;
+}
+.card .text .price .old-price {
+  color: var(--p-color);
+  text-decoration: line-through;
+}
+.card .text button.buy {
+  padding: 15px 0;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 7px;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  width: 100%;
+}
+.card .text button.buy:hover {
+  background-color: hsl(158, 36%, 25%);
+}
+.card .text button.buy img {
+  margin-right: 10px;
+}
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .card .image img {
+    max-height: 450px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .card .text {
+    display: block;
+  }
+  h6.category,
+  .price,
+  p.des,
+  h1.tittle {
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 450px) {
+  .container {
+    margin: 15px auto;
+    padding: 0 15px;
+  }
+  .card .image img {
+    max-height: 300px;
+  }
+  .card .text {
+    padding: 25px;
+  }
+  h6.category,
+  .price,
+  p.des,
+  h1.tittle {
+    padding-bottom: 15px;
+  }
+  .card .text h1.tittle {
+    font-size: 26px;
+  }
+  .card .text p.des {
+    font-size: 12px;
+  }
+  .card .text .price .cur-price{
+    font-size: 25px;
+  }
+  .card .text .price .old-price{
+    font-size: 12px;
+  }
+}
